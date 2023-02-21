@@ -30,9 +30,13 @@ nav{
 }
 
 nav li{
-    display: inline;
     list-style-type: none;
-    margin-right: 20px;
+}
+
+nav ul {
+    padding-inline: 4rem;
+    display: flex;
+    gap: 2rem;
 }
 
 .active{
@@ -64,25 +68,25 @@ nav a:hover{
 
 main{
     padding: 20px;
-    overflow: auto;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;
-    margin-top: 10px;
 }
 
 #content{
-    float: left;
-    width: 75%;
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
 }
 
 aside{
-    float: right;
-    width: 25%;
-    padding-left: 20px;
+    flex: 1;
 }
 
 .profile img{
@@ -121,10 +125,21 @@ th,td{
 padding-left: 39px;
 }
 
-@media screen and (max-width: 1000px) {
-    #content,
-    aside {
-      width: 100%;
-      padding: 0;
-    }
-  }
+@media screen and (max-width: 1200px) {
+    main {
+            flex-flow: column nowrap;
+        }
+    
+    main aside {
+            align-self: center;
+        }
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+            justify-content: center;
+        }
+    
+    main aside {
+            align-self: stretch;
+        }
+}
